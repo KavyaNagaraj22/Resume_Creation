@@ -1,0 +1,253 @@
+/* Resume9.css */
+
+/* --- Variables for easy customization --- */
+:root {
+    --background-dark: #1a1a2e; /* Dark purple/blue background */
+    --text-light: #f0f0f0;      /* brighter for readability */
+    --accent-blue: #0f3460; /* Darker blue for accents/tags */
+    --highlight-blue: #4a7dff; /* Brighter blue for section titles */
+    --subtle-line: #3a3a5f; /* A darker line color for separation */
+    --name-color: #f0f0f0; /* Slightly lighter for name for contrast */
+  
+    /* Font sizes */
+    --font-size-base: 0.95em;
+    --font-size-small: 0.85em;
+    --font-size-large: 1.1em;
+    --font-size-name: 2.5em; /* Increased name size */
+  }
+  
+  /* --- Overall Template --- */
+  .resume9-template {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background-color: var(--background-dark) !important; /* Force dark background */
+    color: var(--text-light) !important;
+    max-width: 900px;
+    min-height: 11in;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  /* --- Main Grid Container for 40/60 Columns --- */
+  .resume9-main-grid {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr; /* Left 40%, Right 60% */
+    gap: 30px; /* Space between columns */
+    height: 100%; /* Ensure it fills parent height */
+  }
+  
+  /* --- Left Column: Name and Contact Info --- */
+  .resume9-left-column {
+    padding-right: 15px; /* Space before right column starts */
+  }
+  
+  .resume9-name {
+    font-size: var(--font-size-name);
+    color: whitesmoke;
+    margin: 0 0 20px 0; /* Adjusted margin to match image */
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  
+  
+  .resume9-contact-info {
+    margin-top: 0;
+    
+  }
+  
+  .resume9-contact-item {
+    font-size: var(--font-size-base); /* Slightly larger for contact items */
+    color: whitesmoke;
+    margin: 8px 0; /* More spacing between contact items */
+    line-height: 1.2;
+  }
+  
+  .resume9-contact-item a {
+    color: whitesmoke;
+    text-decoration: none;
+    word-break: break-all; /* Prevent long URLs from overflowing */
+  }
+  
+  .resume9-contact-item a:hover {
+    text-decoration: underline;
+  }
+  
+  /* --- Right Column: All other resume sections --- */
+  .resume9-right-column {
+    padding-left: 15px; /* Space after left column ends */
+  }
+  
+  /* --- Profile Summary (First section in right column) --- */
+  .resume9-profile-summary {
+    margin-bottom: 25px; /* Space after summary */
+    
+  }
+  
+  .resume9-summary-text {
+    font-size: var(--font-size-base);
+    color: whitesmoke;
+    margin: 0;
+    text-align: justify; /* Justify text for a cleaner look */
+  }
+  
+  /* --- Section Titles --- */
+  .resume9-section {
+    margin-bottom: 25px; /* Vertical space between sections */
+  }
+  
+  .resume9-section:last-child {
+    margin-bottom: 0; /* No margin after the very last section */
+  }
+  
+  .resume9-section-title {
+    font-size: 1.2em;
+    color: var(--highlight-blue); /* Bright blue for section titles */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--subtle-line); /* Subtle line under titles */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+  }
+  
+  /* --- Entry Styling (Experience, Education) --- */
+  .resume9-entry {
+    margin-bottom: 20px;
+  }
+  
+  .resume9-entry:last-child {
+    margin-bottom: 0;
+  }
+  
+  .resume9-entry-title { /* Company/Degree Name */
+    font-size: var(--font-size-large);
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .resume9-entry-role, /* Job Title */
+  .resume9-entry-degree { /* Degree details if separate from title */
+    font-size: var(--font-size-base);
+    color: var(--text-light);
+    margin: 0 0 5px 0;
+    font-weight: 500;
+  }
+  
+  .resume9-entry-meta { /* Dates, Location, Institution */
+    font-size: var(--font-size-small);
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  /* --- Details List (Bullet Points for Experience) --- */
+  .resume9-details-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: var(--font-size-base);
+    color: var(--text-light);
+  }
+  
+  .resume9-details-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px; /* Space for custom bullet */
+  }
+  
+  .resume9-details-list li::before {
+    content: '—'; /* Custom dash bullet */
+    color: var(--highlight-blue); /* Blue dash */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  /* --- Languages & Skills Sections (Tags) --- */
+  .resume9-languages-grid,
+  .resume9-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    max-width: 100%;            /* Ensure grid does not overflow its parent */
+  }
+  
+  .resume9-language-tag,
+  .resume9-skill-tag {
+      background-color: var(--accent-blue);
+      color: var(--text-light);
+      padding: 6px 10px;                /* Reduced padding */
+      border-radius: 5px;
+      font-size: var(--font-size-base);
+      font-weight: 500;
+      white-space: normal;              /* Allow multi-line tags */
+      word-break: break-word;           /* Break long words within tags */
+      max-width: 100%;                  /* Prevent overflow */
+      transition: background-color 0.2s ease;
+    }
+    
+  
+  .resume9-language-tag:hover,
+  .resume9-skill-tag:hover {
+      background-color: var(--highlight-blue); /* Lighter blue on hover */
+      cursor: pointer;
+  }
+  
+  /* --- General List (for Awards, Certificates, etc.) --- */
+  .resume9-list-plain {
+    list-style: none;
+    padding-left: 0;
+    font-size: var(--font-size-base);
+    color: var(--text-light);
+  }
+  
+  .resume9-list-plain li {
+    margin-bottom: 5px;
+  }
+  
+  .resume9-list-plain li strong {
+    color: var(--highlight-blue); /* Make strong text in lists stand out */
+  }
+  
+  /* --- Print Styles --- */
+  @media print {
+    .resume9-template {
+      box-shadow: none;
+      margin: 0;
+      padding: 20px; /* Adjust padding for print */
+      background-color: #fff; /* Force white background for printing */
+      color: #000; /* Force black text for printing */
+      -webkit-print-color-adjust: exact; /* For backgrounds and text colors */
+      print-color-adjust: exact; /* For backgrounds and text colors */
+    }
+  
+    /* Adjust colors for print for readability */
+    .resume9-template * {
+      color: #000 !important; /* Force black for all text */
+    }
+    .resume9-template {
+      background-color: #fff !important; /* Force white background */
+    }
+  
+    .resume9-section-title,
+    .resume9-details-list li::before {
+      color: #000 !important; /* Ensure these are also dark */
+      border-color: #ddd !important; /* Lighter border for print */
+    }
+  
+    .resume9-language-tag,
+    .resume9-skill-tag {
+      background-color: #eee !important; /* Light background for tags */
+      color: #000 !important;
+    }
+  
+    /* Specific override for links in print if they need to be distinct */
+    .resume9-contact-item a {
+      color: #007bff !important; /* Make links blue again for distinction */
+    }
+  }

@@ -1,0 +1,127 @@
+:root {
+    --header-background-blue: #e0f2f7;
+    --text-color: #222;
+    --heading-color: #333;
+    --meta-text-color: #555;
+    --border-color: #aaa;
+  }
+  
+  .resume14-template {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background: #fff;
+    padding: 40px;
+    max-width: fit-content;
+    margin: auto;
+    line-height: 1.6;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resume14-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: var(--header-background-blue);
+    padding: 20px 30px;
+    border-bottom: 2px solid #444;
+    margin-bottom: 30px;
+  }
+  
+  .resume14-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+  }
+  
+  .resume14-header h1 {
+    margin: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+  
+  .resume14-header div {
+    text-align: left;
+    flex-grow: 1;
+    color: var(--text-color);
+  }
+  
+  .resume14-header div p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .resume-section {
+    margin-bottom: 30px;
+  }
+  
+  .resume-section h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+  }
+  
+  .entry-meta {
+    font-size: 13px;
+    color: var(--meta-text-color);
+    margin-top: -5px;
+    margin-bottom: 8px;
+  }
+  
+  .entry ul {
+    padding-left: 20px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 5px;
+  }
+  
+  .entry ul li {
+    margin-bottom: 4px;
+  }
+  
+  .resume14-template .resume-section ul li {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .resume2-education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+  
+  .resume2-education-table th,
+  .resume2-education-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .resume2-education-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  
+  @media print {
+    .resume14-template {
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .resume14-header {
+      padding: 15px 25px;
+    }
+  }
+  

@@ -1,0 +1,181 @@
+/* --- CustomizationPanel.css --- */
+
+.customization-panel {
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 5px 5px 15px #c5c5c5, -5px -5px 15px #ffffff;
+  max-width: flex;
+  margin: 20px auto;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.customization-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 20px #c5c5c5, -8px -8px 20px #ffffff;
+}
+
+.customization-panel h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  background: linear-gradient(to right, #1976d2, #9c27b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Groups */
+.customization-group {
+  margin-bottom: 20px;
+}
+
+.customization-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+/* Font row (Style + Size side by side) */
+.font-row {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.font-style-group,
+.font-size-group {
+  flex: 1;
+}
+
+/* Dropdowns */
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 6px #ccc, inset -2px -2px 6px #fff;
+  transition: 0.2s;
+}
+
+select:hover {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+}
+
+/* Color bubbles */
+.color-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.color-bubble {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  box-shadow: 2px 2px 6px #aaa, -2px -2px 6px #fff;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.color-bubble:hover {
+  transform: scale(1.15);
+}
+
+.color-bubble.active {
+  border: 2px solid #000;
+  transform: scale(1.2);
+}
+
+/* Custom Picker bubble */
+.color-bubble.custom-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  background: linear-gradient(145deg, #f1f1f1, #ffffff);
+  box-shadow: 3px 3px 8px #aaa, -3px -3px 8px #fff;
+  position: relative;
+}
+
+.color-bubble.custom-picker input[type="color"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+/* Layout buttons */
+.layout-options {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.layout-options button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #5db5f0);
+  box-shadow: 3px 3px 8px #b3b3b3, -3px -3px 8px #fff;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.layout-options button:hover {
+  background: linear-gradient(145deg, #6fb3eb);
+  transform: translateY(-2px);
+}
+
+.layout-options button.active {
+  background: linear-gradient(145deg, #1b6dc0, #42a5f5);
+  color: white;
+  box-shadow: 2px 2px 8px rgba(25, 118, 210, 0.6);
+}
+/* Text style buttons */
+.text-style-buttons,
+.text-alignment-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.text-style-buttons button,
+.text-alignment-buttons button {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #eeeeee, #ffffff);
+  box-shadow: 2px 2px 5px #bbb, -2px -2px 5px #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.text-style-buttons button:hover,
+.text-alignment-buttons button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+}
+
+.text-style-buttons button.active,
+.text-alignment-buttons button.active {
+  background: linear-gradient(145deg, #1976d2, #42a5f5);
+  color: white;
+  box-shadow: 0 3px 8px rgba(25, 118, 210, 0.5);
+}

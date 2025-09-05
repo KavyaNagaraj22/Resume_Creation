@@ -1,0 +1,97 @@
+.viewer-page {
+  padding: 30px;
+  background: #f5f5f5; 
+  /* Give it a white background so the template can draw on it */
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  width: flex;
+  /* Take up the available space */
+  box-sizing: border-box;
+}
+
+.download-btn {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.download-btn button {
+  padding: 10px 16px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 📄 Container for resume page in full A4 size (for screen) */
+.viewer-container {
+  background-color: #ffffff;
+  width: 794px;           /* A4 width in px at 96 DPI */
+  min-height: 1123px;     /* A4 height in px at 96 DPI */
+  margin: 30px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
+
+/* Template content inside viewer container */
+.viewer-container > div {
+  flex-grow: 1;
+  width: flex;
+  height: 50%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ⏳ Loading text */
+.viewer-container p {
+  text-align: justify;
+  font-size: 1.2em;
+  color: #555;
+  margin: auto;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .viewer-container {
+    width: 95%;
+    min-height: auto;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .viewer-container > div {
+    padding: 0;
+  }
+}
+
+/* 🖨️ Print-friendly A4 format */
+@media print {
+  body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .viewer-container {
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .viewer-container > div {
+    padding: 20mm;
+  }
+}

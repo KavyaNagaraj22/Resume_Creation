@@ -1,0 +1,164 @@
+/* CreativeTemplate.css - compact spacing, no gaps between divisions */
+
+:root {
+  --header-background-blue: #e0f2f7;
+  --text-color: #222;
+  --heading-color: #333;
+  --meta-text-color: #555;
+  --border-color: #aaa;
+}
+
+/* Base container */
+.creative-template {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background: #fff;
+  padding: 28px;            /* slightly reduced and even */
+  margin: auto;
+  line-height: 1.5;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 800px;         /* avoid flex/invalid value */
+}
+
+/* Reset inner default margins to avoid compounding gaps */
+.creative-template h1,
+.creative-template h2,
+.creative-template h3,
+.creative-template h4,
+.creative-template p,
+.creative-template ul,
+.creative-template ol,
+.creative-template table {
+  margin: 0;
+}
+
+/* Header */
+.creative-header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--header-background-blue);
+  padding: 16px 22px;
+  border-bottom: 2px solid #444;
+  margin-bottom: 16px; /* compact */
+}
+
+.creative-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.creative-header h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Profile details text */
+.creative-header div { text-align: left; color: var(--text-color); }
+.creative-header div p { margin: 3px 0; font-size: 13px; }
+
+/* Sections: only bottom spacing on siblings; tiny padding prevents margin collapse */
+.resume-section {
+  padding-top: 0.1px;        /* prevents margin-collapsing without visual change */
+}
+.resume-section:not(:last-child) {
+  margin-bottom: 12px;       /* single-direction rhythm */
+}
+
+/* Section headings */
+.resume-section h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--heading-color);
+  margin: 0 0 6px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+}
+
+/* Entry blocks */
+.entry { margin: 0 0 8px 0; }
+
+/* Meta text under titles */
+.entry-meta {
+  font-size: 12px;
+  color: var(--meta-text-color);
+  margin: 2px 0 6px 0; /* tight */
+}
+
+/* Lists inside entries – remove outer margins */
+.entry ul {
+  margin: 0;                 /* remove gaps before/after list */
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--text-color);
+}
+.entry ul li { margin: 3px 0; }
+
+/* Skills / languages plain lists (no pills) */
+.icon-skills,
+.lang-dots {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.icon-skills li,
+.lang-dots li {
+  background: transparent;
+  padding: 0;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Emphasis */
+.icon-skills li strong,
+.lang-dots li strong { color: var(--heading-color); }
+
+.lang-dots li .language-level { font-size: 1.1em; line-height: 1; }
+
+/* Links */
+.entry p a { color: #0a66c2; text-decoration: none; }
+.entry p a:hover { text-decoration: underline; }
+
+/* Education table compact */
+.resume2-education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+.resume2-education-table th,
+.resume2-education-table td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 13px;
+}
+.resume2-education-table th {
+  background-color: #f7f7f7;
+  font-weight: 700;
+}
+
+/* Print: keep compact, remove shadows/padding controlled by page margins if any */
+@media print {
+  .creative-template { box-shadow: none; padding: 16px; margin: 0; }
+  .creative-header { padding: 12px 18px; margin-bottom: 12px; }
+}
+
+/* Ensure no button styles leak into LI */
+.creative-template .resume-section ul li,
+.creative-template .icon-skills li,
+.creative-template .lang-dots li {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0;
+  list-style-type: none;
+}

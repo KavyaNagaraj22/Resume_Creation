@@ -1,0 +1,108 @@
+/* RedTemplate.css */
+
+.red-template {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  max-width: fit-content;
+  margin: auto;
+  padding: 40px;
+  background: #fff;
+  border: 10px solid #f55;
+}
+
+.red-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.red-header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.red-header h2 {
+  color: #f55;
+  margin: 5px 0 15px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.red-contact p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.red-body section {
+  margin-bottom: 25px;
+}
+
+.red-body h3 {
+  color: #f55;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #fdd;
+  padding-bottom: 5px;
+  text-align: justify;
+}
+
+.entry {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.date-loc {
+  font-size: 13px;
+  color: #e6b6b6;
+  margin-bottom: 4px;
+}
+
+/* ⚠️ Fix: Reset styles for list items to prevent global button styles from applying */
+.red-template ul {
+  margin: 5px 0 0 20px;
+  padding: 0;
+  list-style-type: disc; /* Use bullet points for the main lists */
+}
+
+.red-template ul li {
+  background: none; /* Make sure no background color is applied */
+  color: #222; /* Set to the correct text color */
+  padding: 0; /* Remove any padding from the global button style */
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  background-color: #f55;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-align: justify;
+}
+
+.red-body section p {
+  text-align: justify;
+}
+.resume4-education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.resume4-education-table th,
+.resume4-education-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.resume4-education-table th {
+  background-color: #f55;
+  font-weight: bold;
+}

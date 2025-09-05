@@ -1,0 +1,308 @@
+/* --- Variables for easy customization --- */
+:root {
+  --primary-green: #4CAF50; /* A shade of green for primary elements */
+  --secondary-green: #DCEDC8; /* Lighter green for accents/backgrounds */
+  --text-dark: #111111; /* Very dark for maximum readability */
+  --text-light: #222222; /* Darker than before for better contrast */
+  --border-grey: #666666; /* Darker border for visibility */
+  --background-white: #ffffff; /* Main content background */
+  --section-line-color: #4CAF50; /* Stronger section line */
+
+  /* Fonts */
+  --font-family-header: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-body: 'Roboto', Arial, sans-serif;
+
+  /* Font Sizes */
+  --font-size-base: 0.95em;
+  --font-size-small: 0.85em;
+  --font-size-large: 1.1em;
+  --font-size-name: 2.2em;
+  --font-size-title: 1.3em;
+  --font-size-section-title: 1.4em;
+}
+
+/* --- Overall Template Container --- */
+.resume8-template {
+  font-family: var(--font-family-body);
+  background-color: var(--background-white);
+  color: var(--text-dark);
+  max-width: fit-content;
+  min-height: 11in;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+  font-size: var(--font-size-base);
+  padding: 30px 40px;
+  box-sizing: border-box;
+  background-image: none; /* Removed pattern for clarity */
+}
+
+/* --- Header Section --- */
+.resume8-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-grey);
+}
+
+.resume8-header-info {
+  flex-grow: 1;
+}
+
+.resume8-name {
+  font-family: var(--font-family-header);
+  font-size: var(--font-size-name);
+  color: var(--text-dark);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.resume8-title {
+  font-family: var(--font-family-header);
+  font-size: var(--font-size-title);
+  color: var(--text-dark);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.resume8-contact-info {
+  font-size: var(--font-size-base);
+  color: var(--text-dark);
+}
+
+.resume8-contact-item {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.resume8-contact-item i {
+  color: var(--primary-green);
+  margin-right: 8px;
+  width: 15px;
+  text-align: center;
+}
+
+.resume8-contact-item a {
+  color: #0a66c2; /* LinkedIn blue */
+  text-decoration: none;
+}
+
+.resume8-contact-item a:hover {
+  text-decoration: underline;
+}
+
+.resume8-header-photo {
+  margin-left: 30px;
+  flex-shrink: 0;
+}
+
+.resume8-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Section Styling --- */
+.resume8-section {
+  margin-bottom: 25px;
+}
+
+.resume8-section-title {
+  font-family: var(--font-family-header);
+  font-size: var(--font-size-section-title);
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--section-line-color);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* --- Experience & Education --- */
+.resume8-entry {
+  margin-bottom: 20px;
+}
+
+.resume8-entry-header {
+  display: flex;
+  gap: 20px;
+}
+
+.resume8-entry-left-meta {
+  flex-basis: 30%;
+  text-align: right;
+  padding-right: 10px;
+  border-right: 1px solid var(--border-grey);
+}
+
+.resume8-entry-date {
+  font-size: var(--font-size-base);
+  color: var(--primary-green);
+  margin: 0;
+  font-weight: 500;
+}
+
+.resume8-entry-location {
+  font-size: var(--font-size-small);
+  color: var(--text-dark);
+}
+
+.resume8-entry-title {
+  font-size: var(--font-size-large);
+  color: var(--text-dark);
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.resume8-entry-meta {
+  font-size: var(--font-size-base);
+  color: var(--text-dark);
+}
+
+/* --- Bullet Points --- */
+.resume8-details-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.resume8-details-list li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 18px;
+  color: var(--text-dark);
+}
+
+.resume8-details-list li::before {
+  content: '✓';
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+}
+
+/* --- Skills Section --- */
+.resume8-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.resume8-skill-item {
+  display: flex;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.resume8-skill-icon {
+  color: var(--primary-green);
+  margin-right: 8px;
+}
+
+/* --- Languages Section --- */
+.resume8-languages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.resume8-language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume8-language-name {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.resume8-language-level {
+  color: var(--primary-green);
+  letter-spacing: 3px;
+}
+
+/* --- Strengths Section --- */
+.resume8-strengths-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 20px;
+}
+
+.resume8-strengths-list li {
+  color: var(--text-dark);
+  position: relative;
+  padding-left: 15px;
+}
+
+.resume8-strengths-list li::before {
+  content: '•';
+  color: var(--primary-green);
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+}
+
+/* --- Education Table --- */
+.resume8-education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.resume8-education-table th{
+  background-color: #f2f2f2; /* light gray for contrast */
+  color: var(--text-dark) !important; /* force dark text */
+  font-weight: bold;
+  opacity: 1 !important; /* ensure no transparency */
+}
+.resume8-education-table td {
+  border: 1px solid var(--border-grey);
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+.resume8-education-table th {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* --- Print Styles --- */
+@media print {
+  .resume8-template {
+      box-shadow: none;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+  }
+}
+
+
+/* === Spacing removal overrides (added) === */
+.resume8-header { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+.resume8-section { margin-bottom: 0 !important; }
+.resume8-section-title { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.resume8-entry { margin-bottom: 0 !important; }
+.resume8-entry-header { gap: 0 !important; }
+.resume8-entry-left-meta { padding-right: 0 !important; border-right: 0 !important; }
+.resume8-details-list { margin-top: 0 !important; }
+.resume8-details-list li { margin-bottom: 0 !important; }
+.resume8-skills-grid, .resume8-languages-grid, .resume8-strengths-list { gap: 0 !important; }
+.resume8-strengths-list { gap: 0 0 !important; }
+.resume8-language-level { letter-spacing: 0 !important; }
+.resume8-education-table { margin-top: 0 !important; }
+.resume8-contact-item { margin-bottom: 0 !important; }

@@ -1,0 +1,174 @@
+/* SectionPickerModal.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for depth */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  perspective: 1000px; /* Establishes a 3D perspective for child elements */
+}
+
+.modal {
+  background: linear-gradient(145deg, #f0f0f0, #ffffff); /* Subtle gradient for depth */
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3), /* Stronger shadow for lift */
+    0 0 0 1px rgba(0, 0, 0, 0.05); /* Very subtle inner border */
+  position: relative;
+  transform-style: preserve-3d; /* Allows 3D transformations on children */
+  animation: modalOpen 0.3s ease-out forwards; /* Entry animation */
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) rotateX(-10deg); /* Start slightly above and tilted */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg); /* Settle into place */
+  }
+}
+
+.modal h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Slight text shadow for depth */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: #888;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%; /* Make it circular */
+  transition: all 0.2s ease-in-out;
+  line-height: 1; /* Adjust line height for better centering of 'x' */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.close-btn:hover {
+  color: #555;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1) rotate(5deg); /* Slight pop and rotate on hover */
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 10px; /* Add some padding around the grid */
+}
+
+.section-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.1), /* Base shadow */
+    0 2px 5px rgba(0, 0, 0, 0.05); /* Smaller, softer shadow */
+  border: 1px solid rgba(220, 220, 220, 0.7); /* Subtle border */
+  position: relative;
+  overflow: hidden; /* Ensures pseudo-elements are clipped */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content */
+  align-items: flex-start; /* Align content to the start */
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%); /* Subtle radial highlight */
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  z-index: 1; /* Below content but above background */
+}
+
+.section-card:hover {
+  transform: translateY(-5px) scale(1.02); /* Lift and slightly enlarge */
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.2), /* Enhanced shadow on hover */
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  border-color: #a0cffc; /* Highlight border on hover */
+  background: linear-gradient(135deg, #e6f3ff, #cce7ff); /* Subtle light blue gradient */
+}
+
+.section-card:hover::before {
+  opacity: 1; /* Show highlight on hover */
+}
+
+.section-card h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+  position: relative; /* For z-index to be above ::before */
+  z-index: 2;
+}
+
+.section-card p {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+  position: relative; /* For z-index to be above ::before */
+  z-index: 2;
+}
+
+/* Optional: Add a subtle 'active' state if you plan to highlight selected cards */
+.section-card.active {
+  border: 2px solid #007bff;
+  box-shadow:
+    0 0 0 3px rgba(0, 123, 255, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    padding: 20px;
+  }
+  .section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .modal h2 {
+    font-size: 1.8em;
+  }
+  .close-btn {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  }
+  .section-card {
+    padding: 15px;
+  }
+}

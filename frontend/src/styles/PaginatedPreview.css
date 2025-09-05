@@ -1,0 +1,48 @@
+.paginated-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  background-color: #e2e2e2;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.document-page {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  width: 794px;         /* A4 width @ ~96dpi */
+  min-height: 1123px;   /* A4 height @ ~96dpi */
+}
+
+.page-content {
+  width: 100%;
+  min-height: 1123px;
+  padding: 0;           /* no padding here to not shrink height */
+  box-sizing: border-box;
+}
+
+@media print {
+  body {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+  .paginated-preview-container {
+    padding: 0;
+    gap: 0;
+    background: none;
+  }
+  .document-page {
+    box-shadow: none;
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+  }
+  .document-page:last-child {
+    page-break-after: avoid;
+  }
+}

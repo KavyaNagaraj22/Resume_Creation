@@ -1,0 +1,132 @@
+/* Resume13.css */
+
+.resume13-template {
+    font-family: 'Georgia', serif;
+    max-width: fit-content;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resume13-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .resume13-header h1 {
+    font-size: 2.2em;
+    margin: 0;
+    color: #111;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .contact-info p {
+    margin: 2px 0;
+    line-height: 1.2;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .resume13-body {
+    margin-top: 20px;
+  }
+  
+  .resume-section {
+    margin-bottom: 25px;
+  }
+  
+  .resume-section h3 {
+    font-size: 1.25em;
+    color: #d03434;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .entry {
+    margin-bottom: 15px;
+  }
+  
+  .entry strong {
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .entry small {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .resume-skills-list,
+  .resume-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .resume-skills-list li,
+  .resume-section ul li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    background-color: transparent;
+    color: #333;
+    padding: 0;
+    list-style-type: disc;
+  }
+  
+  .resume-section p {
+    margin: 4px 0;
+    font-size: 0.95em;
+    color: #333;
+    text-align: justify;
+  }
+  
+  a {
+    color: #d03434;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .resume13-education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+  }
+  
+  .resume13-education-table th,
+  .resume13-education-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .resume13-education-table th {
+    background-color: #ccc;
+    font-weight: bold;
+  }
+  
+  .contact-icon {
+    width: 16px;
+    flex-shrink: 0;
+  }
+  
+  .page-break {
+    page-break-after: always;
+  }
+  

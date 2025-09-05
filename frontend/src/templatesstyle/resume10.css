@@ -1,0 +1,381 @@
+/* resume10.css */
+
+/* --- Variables for easy customization --- */
+:root {
+    --primary-color: #3f51b5; /* Deep Indigo - for header background, accents */
+    --secondary-color: #FFC107; /* Amber - for highlights, photo border */
+    --text-dark: #212121; /* Dark text for readability */
+    --text-medium: #616161; /* Medium grey for less prominent text */
+    --text-light: #BDBDBD; /* Light grey for subtle text/icons */
+    --bg-light: #F5F5F5; /* Light background for the overall page */
+    --white: #FFFFFF; /* White for content areas */
+    --border-light: #E0E0E0; /* Light border color */
+  
+    /* Font sizes */
+    --font-size-base: 1em;
+    --font-size-small: 0.85em;
+    --font-size-large: 1.2em;
+    --font-size-xl: 2.5em; /* For name */
+    --font-size-h2: 1.5em; /* For title */
+    --font-size-section-h3: 1.3em;
+  }
+  
+  /* --- Overall Resume Container --- */
+  .resume10 {
+    font-family: 'Roboto', sans-serif;
+    max-width: fit-content; /* A4 width */
+    min-height: fit-content; /* A4 height */
+    margin: 20px auto;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    box-sizing: border-box;
+    padding-bottom: 30px; /* Space at the bottom */
+  }
+  
+  /* --- Header Section --- */
+  .resume10-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .resume10-header-left h1 {
+    font-size: var(--font-size-xl);
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+  
+  .resume10-header-left h2 {
+    font-size: var(--font-size-h2);
+    margin: 5px 0 20px 0;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .resume10-header-left p {
+    margin: 5px 0;
+    font-size: var(--font-size-base);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Custom Icons (placeholder for actual Font Awesome or custom svgs) */
+  .resume10-header-left [class^="icon-"] {
+    font-size: 1.1em;
+    margin-right: 8px;
+    color: var(--secondary-color); /* Amber icons */
+  }
+  
+  .resume10-header-left a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  .resume10-header-left a:hover {
+    text-decoration: underline;
+  }
+  
+  .resume10-header-right {
+    flex-shrink: 0; /* Prevent photo from shrinking */
+  }
+  
+  .resume10-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color); /* Amber border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* --- Summary --- */
+  .resume10-summary {
+    padding: 25px 40px;
+    background-color: var(--bg-light); /* Light grey background for summary */
+    margin: 0;
+    font-size: var(--font-size-base);
+    color: var(--text-dark);
+    text-align: justify;
+  }
+  
+  /* --- Section Styling --- */
+  .resume10-section {
+    padding: 25px 40px 0; /* Top padding, side padding, no bottom padding by default */
+  }
+  
+  .resume10-section h3 {
+    font-size: var(--font-size-section-h3);
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color); /* Underline for section titles */
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  
+  /* --- Experience Section --- */
+  .resume10-exp {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .resume10-exp-left {
+    flex-basis: 30%; /* Adjust as needed */
+    padding-right: 20px;
+    text-align: right; /* Dates/location align right */
+    border-right: 1px solid var(--border-light); /* Vertical line */
+    font-size: var(--font-size-small);
+    color: var(--text-medium);
+  }
+  
+  .resume10-exp-left p {
+    margin: 0 0 5px 0;
+  }
+  
+  .resume10-exp-right {
+    flex-basis: 70%; /* Adjust as needed */
+    padding-left: 20px;
+  }
+  
+  .resume10-exp-right p {
+    margin: 0 0 5px 0;
+    font-size: var(--font-size-base);
+    color: var(--text-dark);
+  }
+  
+  .resume10-exp-right strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--font-size-large);
+  }
+  
+  .resume10-exp-right ul {
+    list-style-type: disc; /* Default disc bullet */
+    padding-left: 20px;
+    margin-top: 5px;
+    color: var(--text-dark);
+  }
+  
+  .resume10-exp-right ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* --- Education Section --- */
+  .resume10-edu {
+    margin-bottom: 15px;
+    font-size: var(--font-size-base);
+  }
+  
+  .resume10-edu p {
+    margin: 0;
+  }
+  
+  .resume10-edu strong {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  /* --- Languages Section (New/Corrected Styles) --- */
+  .resume10-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .language-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-basis: 45%;               /* ✅ fits 2 columns max */
+    min-width: 120px;              /* ✅ prevents squeeze */
+    max-width: 100%;               /* ✅ prevents overflow */
+    word-wrap: break-word;         /* ✅ wrap inside names */
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+  
+  
+  .language-entry p {
+    margin: 0;
+    font-weight: 500;
+    color: blue;
+  }
+  
+  .language-dots {
+    display: flex;
+    gap: 3px; /* Space between dots */
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-light); /* Unfilled dot color */
+    border: 1px solid var(--text-light); /* Border for clarity */
+  }
+  
+  .dot.filled {
+    background-color: var(--secondary-color); /* Filled dot color (Amber) */
+    border-color: var(--secondary-color);
+  }
+  
+  /* --- Skills Section (Tags) --- */
+  .resume10-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between skill tags */
+    padding-bottom: 15px; /* Add some space at the bottom */
+  }
+  
+  .tag {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: var(--font-size-base);
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    box-sizing: border-box;  }
+  
+  /* --- Quote Section --- */
+  blockquote {
+    font-style: italic;
+    margin: 0;
+    padding: 10px 0;
+    border-left: 5px solid var(--secondary-color); /* Amber border for quote */
+    padding-left: 20px;
+    color: var(--text-medium);
+  }
+  
+  /* --- Print Styles --- */
+  @media print {
+    body {
+      margin: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .resume10-template-wrapper {
+      padding: 0;
+      background: none !important; /* Remove wrapper background */
+    }
+    .resume10 {
+      box-shadow: none;
+      margin: 0;
+      border: none;
+      background-color: #fff !important; /* Force white background */
+      color: #000 !important; /* Force black text */
+    }
+  
+    .resume10-header {
+      background-color: var(--primary-color) !important;
+      color: var(--white) !important;
+    }
+    .resume10-header-left h2 {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .resume10-header-left [class^="icon-"],
+    .resume10-photo {
+      border-color: var(--secondary-color) !important;
+    }
+  
+    .resume10-summary {
+      background-color: #f5f5f5 !important;
+      color: #000 !important;
+    }
+  
+    .resume10-section h3 {
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color) !important;
+    }
+  
+    .resume10-exp-left,
+    .resume10-exp-right p,
+    .resume10-edu p,
+    .language-entry p,
+    .resume10-tags .tag,
+    blockquote {
+      color: #000 !important;
+    }
+  
+    .resume10-exp-right strong,
+    .resume10-edu strong {
+      color: var(--primary-color) !important;
+    }
+  
+    .resume10-exp-left {
+      border-right-color: var(--border-light) !important;
+    }
+  
+    .language-dots .dot {
+      background-color: var(--text-light) !important; /* Unfilled dot color */
+      border-color: var(--text-light) !important;
+    }
+    .language-dots .dot.filled {
+      background-color: var(--secondary-color) !important; /* Filled dot color */
+      border-color: var(--secondary-color) !important;
+    }
+  
+    .tag {
+      background-color: var(--primary-color) !important;
+      color: var(--white) !important;
+    }
+  
+    blockquote {
+      border-left-color: var(--secondary-color) !important;
+    }
+  }
+
+/* Add this to your resume10.css file */
+
+/* Education Section */
+.resume10-education-section {
+  padding: 25px 40px 0; /* Match other sections */
+}
+
+.resume10-education-section h3 {
+  font-size: var(--font-size-section-h3);
+  color: var(--primary-color);
+  margin: 0 0 15px 0; /* Remove left margin to align with table */
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.resume10-education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0; /* Remove default margins */
+}
+
+.resume10-education-table th,
+.resume10-education-table td {
+  border: 1px solid var(--border-light);
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.resume10-education-table th {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.resume10-education-table tr:nth-child(even) {
+  background-color: var(--bg-light);
+}

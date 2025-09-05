@@ -1,0 +1,171 @@
+/* ModernTemplate.css - Revised */
+
+.modern-template {
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+  padding: 40px;
+  max-width: flex;
+  margin: 0 auto;
+  line-height: 1.6;
+  gap: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 40%;
+  background-color: #1d2c3a;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar .photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.name-title h1 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.name-title h2 {
+  font-size: 12px;
+  color: #ccc;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.contact p,
+.sidebar a {
+  font-size: 11px;
+  color: #ddd;
+  margin: 2px 0;
+  word-break: break-word;
+}
+
+.sidebar h2 {
+  font-size: 12px;
+  margin: 20px 0 8px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding-bottom: 4px;
+  color: #fff;
+}
+
+.sidebar ul {
+  list-style: none; /* Reset list style for the sidebar pills */
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.sidebar ul li {
+  background-color: #2f3e4d;
+  color: #eee;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 10px;
+  margin-bottom: 5px; /* Add some spacing between pills */
+}
+
+/* Fix for the skills, languages, and awards sections */
+.skills ul,
+.languages ul,
+.awards ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 0;
+  margin-top: 10px;
+  list-style: none; /* Ensure no bullet points */
+}
+
+/* Main content */
+.main {
+  width: 60%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h2.section-heading {
+  font-size: 12px;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 4px solid #00b386; /* ✅ Green accent line */
+  color: #1d2c3a;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.entry h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.entry p {
+  font-size: 11px;
+  margin: 4px 0 8px;
+  color: #555;
+  text-align: justify;
+}
+
+.entry ul {
+  margin: 5px 0 10px 20px;
+  text-align: justify;
+
+  font-size: 11px;
+  color: #444;
+  list-style: disc; /* Use bullet points for main content lists */
+  padding-left: 20px;
+}
+
+/* ⚠️ THIS IS THE CRITICAL FIX: Explicitly style list items in the main section */
+.main .entry ul li {
+  background-color: transparent; /* Reset any inherited background color */
+  color: #444; /* Ensure the correct text color */
+  padding: 0; /* Reset padding to a default value */
+  margin-bottom: 5px;
+  /* Add any other specific styles here to override global ones */
+}
+
+
+/* Empty message styling */
+.modern-template-empty {
+  text-align: center;
+  padding: 50px;
+  font-size: 16px;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modern-template {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar, .main {
+    width: 100%;
+  }
+
+  .sidebar .photo {
+    margin-bottom: 20px;
+  }
+}

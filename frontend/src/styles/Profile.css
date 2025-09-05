@@ -1,0 +1,181 @@
+/* Profile.css */
+
+.profile-page {
+  padding: 20px;
+  max-width: 1200px; /* Increased max-width for better layout */
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.create-resume-btn {
+  background-color: #28a745; /* Green for Create */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  display: block; /* Make it a block element to take full width if needed */
+  margin-left: auto; /* Center the button if max-width is applied */
+  margin-right: auto; /* Center the button if max-width is applied */
+}
+
+.create-resume-btn:hover {
+  background-color: #218838;
+}
+
+.resume-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjusted column width for wider cards */
+  gap: 25px;
+}
+
+.resume-card {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Ensure card content stacks */
+}
+
+.resume-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.resume-actions {
+  display: flex;
+  flex-direction: row; /* Arrange buttons horizontally */
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line if screen is too small */
+  gap: 8px; /* Slightly reduced space between buttons for horizontal fit */
+  justify-content: center; /* Center buttons horizontally within the card */
+  margin-bottom: 15px;
+}
+
+/* Base style for all action buttons */
+.action-btn {
+  width: 110px;               /* Fixed width for all buttons */
+  height: 40px;               /* Optional: equal height for all */
+  padding: 0 12px;            /* Horizontal padding only */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;                   /* Space between icon and text */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Specific button colors */
+.edit-btn {
+  background-color: #007bff; /* Blue */
+  color: white;
+}
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.view-btn {
+  background-color: #6f42c1; /* Purple */
+  color: white;
+}
+.view-btn:hover {
+  background-color: #5a2c99;
+}
+
+.download-btn {
+  background-color: #ffc107; /* Yellow */
+  color: #333; /* Dark text for contrast */
+}
+.download-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.toggle-preview-btn {
+  background-color: #6c757d; /* Gray */
+  color: white;
+}
+.toggle-preview-btn:hover {
+  background-color: #5a6268;
+}
+.toggle-preview-btn.open {
+  background-color: #4CAF50; /* Green when open */
+}
+.toggle-preview-btn.open:hover {
+  background-color: #45a049;
+}
+
+.preview-box {
+  margin-top: 20px;
+  border: 1px dashed #b0b0b0;
+  padding: 15px;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  max-height: 450px;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.preview-box h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+  text-align: center;
+  margin-top: 0;
+}
+
+.preview-container {
+  transform: scale(0.6);
+  transform-origin: top left;
+  width: 166.66%;
+  height: 166.66%;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.global-resume-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.global-resume-watermark {
+  width: 100px;
+  opacity: 0.5;
+  margin-top: 20px;
+}
+.watermark-img {
+  width: 100px;
+  opacity: 0.6;
+  display: block;
+  margin: 30px auto 0;
+}

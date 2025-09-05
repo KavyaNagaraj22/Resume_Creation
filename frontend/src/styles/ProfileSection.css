@@ -1,0 +1,114 @@
+
+.section {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.section:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.section h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+/* Input Field Styling */
+.section input[type="text"],
+.section input[type="email"],
+.section input[type="url"],
+.section textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccd0d4;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.section input[type="text"]:focus,
+.section input[type="email"]:focus,
+.section input[type="url"]:focus,
+.section textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none; /* Remove default focus outline */
+}
+
+.section textarea {
+  resize: vertical; /* Allow vertical resizing for textareas */
+  min-height: 80px; /* Minimum height for summary */
+}
+
+/* Error Message Styling */
+.section small {
+  color: #dc3545; /* Bootstrap's danger red */
+  font-size: 0.85em;
+  margin-top: -10px; /* Pull it closer to the input field */
+  margin-bottom: 15px;
+  display: block; /* Ensure it takes its own line */
+}
+
+/* Placeholder Styling */
+.section input::placeholder,
+.section textarea::placeholder {
+  color: #999;
+  opacity: 1; /* Ensure placeholder is visible */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+
+  .section input[type="text"],
+  .section input[type="email"],
+  .section input[type="url"],
+  .section textarea {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 15px;
+  }
+
+  .section h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+
+  .section input[type="text"],
+  .section input[type="email"],
+  .section input[type="url"],
+  .section textarea {
+    font-size: 0.9em;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}

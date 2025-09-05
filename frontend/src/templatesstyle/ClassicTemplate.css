@@ -1,0 +1,83 @@
+/* ClassicTemplate.css - compact rhythm + page margins */
+
+* { box-sizing: border-box; }
+
+/* Template container */
+.classic-template {
+  font-family: 'Georgia', serif;
+  background-color: transparent;
+  color: #333;
+  width: 100%;
+  /* Add inner padding so content isn't flush with page edges */
+  padding: 24px;                 /* NEW */
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Reset default margins inside template to avoid compounding gaps */
+.classic-template h1,
+.classic-template h2,
+.classic-template h3,
+.classic-template h4,
+.classic-template p,
+.classic-template ul,
+.classic-template ol,
+.classic-template table,
+.classic-template thead,
+.classic-template tbody { margin: 0; }
+
+/* Header */
+.classic-header { text-align: center; margin: 0 0 10px 0; }
+.classic-header h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #111;
+  letter-spacing: .5px;
+  margin: 0 0 6px 0;
+}
+.contact-info {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  font-size: 0.95em; gap: 8px;
+}
+
+/* Body (stack sections) */
+.classic-body { display: block; }
+
+/* Sections: only bottom spacing */
+.resume-section { display: block; padding: 0; }
+.resume-section:not(:last-child) { margin-bottom: 12px; }
+
+/* Section headings compact */
+.resume-section h3 {
+  font-size: 1.1em; color: #d03434; border: 0; padding: 0; margin: 0 0 6px 0;
+}
+
+/* Entries compact */
+.entry { margin: 0 0 6px 0; padding: 0; }
+
+/* Inline lists tighter */
+.inline-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; }
+.inline-list li { display: inline-block; margin: 0; padding: 0; }
+
+/* Education table (tight cells) */
+.resume2-education-table { width: 100%; border-collapse: collapse; margin: 0; }
+.resume2-education-table th, .resume2-education-table td { padding: 4px 6px; vertical-align: top; border: none; }
+.resume2-education-table thead th { font-weight: 700; color: #222; }
+
+/* Bullets */
+.entry ul { margin: 4px 0 0 18px; padding: 0; }
+.entry ul li { margin: 4px 0; padding: 0; }
+
+/* Contact icon sizing */
+.contact-icon { width: 1em; height: 1em; vertical-align: -2px; margin-right: 4px; }
+
+/* Print margins for exported PDF */
+@media print {
+  @page {
+    size: A4;               /* or auto; use A4 by default */
+    margin: 15mm;           /* NEW: outer page margins */
+  }
+  .classic-template {
+    padding: 0;             /* let @page margins handle outer whitespace */
+  }
+}
