@@ -70,7 +70,7 @@ const Home = () => {
         </div>
         <div className="hero-image">
           <imgprofessional
-            src="C:\Users\kavya\OneDrive\Desktop\resume-builder\frontend\public\professional-resume-template.png"
+            src="professional-resume-template.png"
             alt="Resume Preview"
           />
         </div>

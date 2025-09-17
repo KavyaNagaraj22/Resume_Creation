@@ -33,7 +33,7 @@ const Profile = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/api/resumes/${id}`);
-      setResumes(resumes.filter((r) => r._id !== id));
+      setResumes(resumes.filter((r) => r.id !== id));
       if (openResumeId === id) setOpenResumeId(null);
     } catch (err) {
       console.error("Error deleting resume:", err);
@@ -54,7 +54,7 @@ const Profile = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      navigate(`/editor/${res.data._id}`);
+      navigate(`/editor/${res.data.id}`);
     } catch (err) {
       console.error("Error creating resume:", err);
     }
@@ -89,8 +89,6 @@ const Profile = () => {
     try {
       const res = await axios.get(`http://localhost:5000/api/resumes/${id}`);
       const resume = res.data;
-  
-      // ... (rest of the code for creating and rendering the container) ...
   
       const container = document.createElement("div");
       container.style.position = "fixed";
@@ -157,7 +155,7 @@ const Profile = () => {
         const updatedResume = res.data;
   
         // Update the resume in the local state with the new data
-        setResumes(resumes.map(r => r._id === id ? updatedResume : r));
+        setResumes(resumes.map(r => r.id === id ? updatedResume : r));
         setOpenResumeId(id);
       } catch (err) {
         console.error("Error fetching single resume for preview:", err);
@@ -176,30 +174,30 @@ const Profile = () => {
           const TemplateComponent = templates.find(
             (t) => t.id === (resume.templateId || "modern")
           )?.component;
-          const isPreviewOpen = openResumeId === resume._id;
+          const isPreviewOpen = openResumeId === resume.id;
 
           return (
-            <div key={resume._id} className="resume-card">
+            <div key={resume.id} className="resume-card">
               <h3>{resume.title}</h3>
               <div className="resume-actions">
-                <button className="action-btn edit-btn" onClick={() => handleEdit(resume._id)}>
+                <button className="action-btn edit-btn" onClick={() => handleEdit(resume.id)}>
                 ✏️ 
                 </button>
                 <button
                   className="action-btn view-btn"
-                  onClick={() => window.open(`/view/${resume._id}`, "_blank")}
+                  onClick={() => window.open(`/view/${resume.id}`, "_blank")}
                 >
                   📄 
                 </button>
-                <button className="action-btn download-btn" onClick={() => handleDownload(resume._id)}>
+                <button className="action-btn download-btn" onClick={() => handleDownload(resume.id)}>
                 ⬇️ 
                 </button>
-                <button className="action-btn delete-btn" onClick={() => handleDelete(resume._id)}>
+                <button className="action-btn delete-btn" onClick={() => handleDelete(resume.id)}>
                 🗑️ 
                 </button>
                 <button
                   className={`action-btn toggle-preview-btn ${isPreviewOpen ? "open" : ""}`}
-                  onClick={() => togglePreview(resume._id)}
+                  onClick={() => togglePreview(resume.id)}
                   title={isPreviewOpen ? "Hide Preview" : "Show Preview"}
                 >
                   {isPreviewOpen ? " 👁️‍🗨️Hide Preview" : " 👁️Show Preview"}
@@ -210,7 +208,6 @@ const Profile = () => {
                 <div className="preview-box">
                   <h4>Preview:</h4>
                   <div className="preview-container">
-                    {/* <TemplateComponent data={resume.content} sections={resume.sections}/> */}
                     <TemplateComponent data={resume.content} sections={resume.sections} customizations={resume.customizations}/>
                   </div>
                 </div>

@@ -1,37 +1,71 @@
 // server.js (or index.js)
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import { sequelize } from "./config/db.js";
+import Resume from "./models/Resume.js"; // ensure models are registered
+
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import { createRequire } from "module";
+import admin from "firebase-admin";
 import resumeRoutes from "./routes/resumeRoutes.js";
 import aiHelperRoutes from "./routes/aiHelperRoutes.js";
-import admin from "firebase-admin"; // Import admin SDK
-// Corrected: Use require() for JSON import for broader compatibility
-import { createRequire } from 'module'; // Import createRequire for ES Modules
-const require = createRequire(import.meta.url); // Create a require function for current module
-const serviceAccountKey = require("./serviceAccountKey.json"); // Adjust path and filename
 
 
 dotenv.config();
 const app = express();
 
-// Initialize Firebase Admin SDK
+// ✅ Helmet CSP setup
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://www.gstatic.com", "https://apis.google.com"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https://firebasestorage.googleapis.com"],
+      connectSrc: ["'self'", "https://firebase.googleapis.com", "https://firestore.googleapis.com"],
+      frameSrc: ["'self'", "https://*.firebaseapp.com"],
+    },
+  })
+);
+
+// ✅ Firebase Admin SDK
+const require = createRequire(import.meta.url);
+const serviceAccountKey = require("./serviceAccountKey.json");
+
 admin.initializeApp({
-  // Corrected: Use serviceAccountKey here, matching the import name
-  credential: admin.credential.cert(serviceAccountKey)
+  credential: admin.credential.cert(serviceAccountKey),
 });
 
-// app.use(cors()); // You can remove this commented line
-app.use(cors({
-  origin: 'http://localhost:3000' // Your React app's development URL
-}));
+// ✅ CORS setup
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000", // React local dev
+      process.env.FRONTEND_URL, // optional frontend URL
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
+
+// ✅ Routes
 app.use("/api/resumes", resumeRoutes);
 app.use("/api/ai", aiHelperRoutes);
 
-// API routes placeholder
+// ✅ API test route
 app.get("/", (req, res) => res.send("API Running"));
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => app.listen(5000, () => console.log("Server running on port 5000")))
-  .catch(err => console.log(err));
+// ✅ PostgreSQL connection & sync
+sequelize.authenticate()
+  .then(() => console.log("✅ PostgreSQL connected successfully"))
+  .catch((err) => console.error("❌ PostgreSQL connection failed:", err.message));
+
+sequelize.sync({ alter: true })
+  .then(() => console.log("✅ Tables synced"))
+  .catch((err) => console.error("❌ Sync failed:", err));
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
